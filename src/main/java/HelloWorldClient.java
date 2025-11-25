@@ -5,8 +5,8 @@ public class HelloWorldClient {
 
     public static void main(String[] args) {
 
-        String firstname = args.length > 0 ? args[0] : "Max";
-        String lastname  = args.length > 1 ? args[1] : "Mustermann";
+        String firstname = args.length > 0 ? args[0] : "Maksym";
+        String lastname  = args.length > 1 ? args[1] : "Kovacevic";
 
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
                 .usePlaintext()

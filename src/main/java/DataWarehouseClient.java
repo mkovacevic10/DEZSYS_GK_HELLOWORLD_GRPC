@@ -24,7 +24,7 @@ public class DataWarehouseClient {
         Datawarehouse.ProductData product2 = Datawarehouse.ProductData.newBuilder()
                 .setProductID("00-992100")
                 .setProductName("Mineralwasser")
-                .setProductCategory("Getränk")
+                .setProductCategory("Getraenk")
                 .setProductQuantity(500)
                 .setProductUnit("Flasche 0.5L")
                 .build();
@@ -32,16 +32,26 @@ public class DataWarehouseClient {
         Datawarehouse.Warehouse warehouse = Datawarehouse.Warehouse.newBuilder()
                 .setWarehouseID("001")
                 .setWarehouseName("TGM Bahnhof")
-                .setWarehouseAddress("Wexstraße")
+                .setWarehouseAddress("Wexstrasse")
                 .setWarehousePostalCode("1210")
                 .setWarehouseCity("Wien")
-                .setWarehouseCountry("Österreich")
+                .setWarehouseCountry("Oesterreich")
                 .setTimestamp("2025-12-02 15:02:57.163")
                 .addProductdata(product1)
                 .addProductdata(product2)
                 .build();
 
         stub.sendWarehouse(warehouse);
+
+        System.out.println("=== Warehouse ===");
+        System.out.println();
+        System.out.println("ID:        " + warehouse.getWarehouseID());
+        System.out.println("Name:      " + warehouse.getWarehouseName());
+        System.out.println("Adresse:   " + warehouse.getWarehouseAddress());
+        System.out.println("PLZ/Ort:   " + warehouse.getWarehousePostalCode() + " " + warehouse.getWarehouseCity());
+        System.out.println("Land:      " + warehouse.getWarehouseCountry());
+        System.out.println("Zeit:      " + warehouse.getTimestamp());
+        System.out.println();
 
         System.out.println("=== Produktliste ===\n");
 

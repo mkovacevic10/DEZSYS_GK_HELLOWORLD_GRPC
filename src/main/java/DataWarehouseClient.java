@@ -43,26 +43,7 @@ public class DataWarehouseClient {
 
         stub.sendWarehouse(warehouse);
 
-        System.out.println("=== Warehouse ===");
-        System.out.println();
-        System.out.println("ID:        " + warehouse.getWarehouseID());
-        System.out.println("Name:      " + warehouse.getWarehouseName());
-        System.out.println("Adresse:   " + warehouse.getWarehouseAddress());
-        System.out.println("PLZ/Ort:   " + warehouse.getWarehousePostalCode() + " " + warehouse.getWarehouseCity());
-        System.out.println("Land:      " + warehouse.getWarehouseCountry());
-        System.out.println("Zeit:      " + warehouse.getTimestamp());
-        System.out.println();
-
-        System.out.println("=== Produktliste ===\n");
-
-        for (Datawarehouse.ProductData p : warehouse.getProductdataList()) {
-            System.out.println("ProduktID:      " + p.getProductID());
-            System.out.println("Name:           " + p.getProductName());
-            System.out.println("Kategorie:      " + p.getProductCategory());
-            System.out.println("Menge:          " + p.getProductQuantity());
-            System.out.println("Einheit:        " + p.getProductUnit());
-            System.out.println("-----------------------------------");
-        }
+        System.out.println("Daten wurden an Server geschickt");
 
         channel.shutdown();
     }
